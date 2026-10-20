@@ -13,39 +13,56 @@ export const mockUniversities: University[] = [
   { university_id: 10, name: "University of California, Irvine", domain: "uci.edu" },
 ];
 
+// Preference options for the prototype; these are not seeded database categories.
 export const interestGroups: InterestGroup[] = [
   {
-    name: "Arts and expression",
-    interests: ["Music", "Dance", "Film", "Theater", "Photography", "Writing", "Art and Design"],
+    name: "Meet people",
+    interests: ["Gaming", "Board Games", "Food", "Books", "Travel", "Social Events", "Language Exchange", "Anime and Manga", "Esports", "Tabletop RPGs", "Chess", "Trivia", "Comics", "Movies"],
   },
   {
-    name: "Community and identity",
-    interests: [
-      "Cultural Organizations",
-      "International Students",
-      "Community Service",
-      "Sustainability",
-      "Advocacy",
-      "Faith and Spirituality",
-      "Student Government",
-    ],
+    name: "Food and hands-on hobbies",
+    interests: ["Cooking", "Baking", "Coffee", "Sewing", "Woodworking", "3D Printing", "DIY Projects", "Puzzles", "Collecting", "Car Enthusiasts"],
   },
   {
-    name: "Sports, wellness, and recreation",
-    interests: ["Sports", "Fitness", "Outdoor Activities", "Wellness", "Gaming", "Food", "Travel"],
+    name: "Build your future",
+    interests: ["Career Development", "Networking", "Leadership", "Entrepreneurship", "Public Speaking", "Mentorship", "Student Government", "Debate", "Finance", "Marketing", "Product Design", "Consulting", "Investing"],
   },
   {
-    name: "Academic and professional",
-    interests: [
-      "Business",
-      "Health and Medicine",
-      "Education",
-      "Science",
-      "Engineering",
-      "Computer Science",
-      "Law and Politics",
-      "Career Development",
-      "Entrepreneurship",
-    ],
+    name: "Create and perform",
+    interests: ["Music", "Dance", "Film", "Theater", "Photography", "Writing", "Art and Design", "Crafts", "Music Production", "Singing", "Fashion", "Creative Writing", "Ceramics", "Digital Art", "Comedy"],
+  },
+  {
+    name: "Get active",
+    interests: ["Sports", "Fitness", "Hiking", "Outdoor Activities", "Yoga", "Wellness", "Recreational Teams", "Competitive Sports", "Basketball", "Soccer", "Volleyball", "Running", "Cycling", "Swimming", "Climbing", "Martial Arts", "Tennis", "Surfing", "Mental Health"],
+  },
+  {
+    name: "Find your community",
+    interests: ["Cultural Organizations", "International Students", "Faith and Spirituality", "LGBTQ+ Communities", "First-Generation Students", "Disability Community", "Transfer Students", "Women in STEM", "Veteran Students", "Commuter Students", "Graduate Students", "Interfaith Dialogue"],
+  },
+  {
+    name: "Make a difference",
+    interests: ["Community Service", "Sustainability", "Advocacy", "Fundraising", "Tutoring", "Animal Welfare", "Civic Engagement", "Social Justice", "Public Health", "Environmental Action", "Food Security", "Gardening"],
+  },
+  {
+    name: "Explore your subject",
+    interests: ["Business", "Health and Medicine", "Education", "Science", "Engineering", "Computer Science", "Law and Politics", "Research", "Robotics", "Electronics", "Hackathons", "Web Development", "Artificial Intelligence", "Data Science", "Psychology", "Astronomy", "Mathematics", "History", "Journalism"],
   },
 ];
+
+// Common search terms students may use instead of the displayed interest label.
+export const interestSearchAliases: Record<string, string> = {
+  "Community Service": "volunteer volunteering service",
+  "Computer Science": "coding programming software technology tech",
+  "Social Events": "friends friendship socializing meet people",
+  "Career Development": "jobs internships resumes careers skills",
+  Networking: "professional connections careers",
+  Mentorship: "mentor mentoring guidance advice",
+  Gaming: "video games esports",
+  "Outdoor Activities": "camping outdoors nature adventure",
+  Hiking: "walking trails outdoors",
+  Sports: "athletics sport",
+  "Art and Design": "drawing painting illustration",
+  "Health and Medicine": "premed pre-med nursing healthcare",
+  "LGBTQ+ Communities": "lgbt pride queer",
+  "First-Generation Students": "first gen first-gen",
+};

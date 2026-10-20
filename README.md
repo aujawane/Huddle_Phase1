@@ -34,7 +34,9 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-The site works before Supabase is configured. The university autocomplete uses local demo data until both environment variables are present.
+The club browser at `/find-clubs` is a frontend-only interface. It uses local university options and lets students enter a club search, select interests, and add multiple availability slots with all seven weekdays and start/end times. The results area is a placeholder. There are no sample club records, club matching/filtering algorithms, or database search requests. Preferences remain local to the page.
+
+The separate university API endpoint uses local demo data until both Supabase environment variables are present. The current club browser does not call that endpoint.
 
 ## Connect Supabase
 
@@ -69,10 +71,14 @@ app/
   globals.css                 Huddle design system
   layout.tsx                  Root metadata and layout
   page.tsx                    Home page
+  about/page.tsx              Team and Phase 1 project information
+  find-clubs/page.tsx         Dedicated club finder page
 components/
-  huddle-site.tsx             Landing page and club finder
+  huddle-site.tsx             Landing page
+  club-finder.tsx             Frontend search and preference controls
+  site-header.tsx             Shared site navigation
 lib/
-  mock-data.ts                Local fallback data
+  mock-data.ts                Demo universities and interest options
   types.ts                    Shared application types
   supabase/                   Browser and server clients
 supabase/migrations/          PostgreSQL schema and initial RLS policies
