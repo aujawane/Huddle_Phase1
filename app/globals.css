@@ -285,7 +285,10 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
 .catalog-interest-group legend { margin-bottom: 12px; color: var(--navy-soft); font-size: 12px; font-weight: 750; }
 .catalog-interest-options .choice-chip { padding: 7px 11px; font-size: 11px; line-height: 1.4; }
 .catalog-time-slot { display: grid; min-width: 0; gap: 12px; margin: 0; padding: 14px 12px; border: 1px solid var(--border); border-radius: 14px; background: var(--cream); }
-.catalog-time-slot legend { padding: 0 5px; font-size: 12px; font-weight: 800; }
+.catalog-slot-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.catalog-slot-title { font-size: 12px; font-weight: 800; }
+.catalog-slot-delete { display: grid; width: 32px; height: 32px; flex-shrink: 0; padding: 0; place-items: center; border: 0; border-radius: 8px; color: var(--navy-soft); background: transparent; cursor: pointer; }
+.catalog-slot-delete:hover { color: #9d3823; background: rgba(157, 56, 35, .08); }
 .catalog-days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
 .catalog-days .day-choice { min-width: 0; padding: 0 6px; font-size: 11px; }
 .catalog-time-range { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ClubFinder } from "@/components/club-finder";
 
 export const metadata: Metadata = {
@@ -8,9 +9,14 @@ export const metadata: Metadata = {
 
 export default function FindClubsPage() {
   return (
-    <main className="finder-page">
-      <h1 className="sr-only">Find your club</h1>
-      <ClubFinder />
-    </main>
+    <>
+      <header className="site-nav">
+        <Link className="logo" href="/" aria-label="Huddle home">huddle<span>.</span></Link>
+      </header>
+      <main className="finder-page">
+        <h1 className="sr-only">Find your club</h1>
+        <ClubFinder />
+      </main>
+    </>
   );
 }

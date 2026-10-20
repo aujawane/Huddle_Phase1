@@ -151,7 +151,7 @@ export function ClubFinder() {
       </section>
 
       <div className="catalog-utility-row">
-        <p className="helper-text">Frontend preview · Club listings and matching are not connected yet.</p>
+
       </div>
 
       <div className="catalog-layout">
@@ -188,8 +188,16 @@ export function ClubFinder() {
                 {slots.map((slot, index) => {
                   const error = getSlotError(slot);
                   return <fieldset className="catalog-time-slot" key={slot.id}>
-                    <legend>Time slot {index + 1}</legend>
-                    <span className="availability-label" id={`slot-${slot.id}-days`}>Preferred days · Any if none selected</span>
+                    <legend className="sr-only">Time slot {index + 1}</legend>
+                    <div className="catalog-slot-header">
+                      <span className="catalog-slot-title" aria-hidden="true">Time slot {index + 1}</span>
+                      <button type="button" className="catalog-slot-delete" aria-label={`Remove time slot ${index + 1}`} title={`Remove time slot ${index + 1}`} onClick={() => removeSlot(slot.id)}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+                          <path d="M3 6h18M9 6V4h6v2M5 6l1 14h12l1-14M10 10v6M14 10v6" />
+                        </svg>
+                      </button>
+                    </div>
+                    <span className="sr-only" id={`slot-${slot.id}-days`}>Preferred days</span>
                     <div className="catalog-days" role="group" aria-labelledby={`slot-${slot.id}-days`}>
                       {weekDays.map((day) => <button type="button" className={`day-choice ${slot.days.includes(day) ? "selected" : ""}`} aria-pressed={slot.days.includes(day)} aria-label={`${day}, time slot ${index + 1}`} key={day} onClick={() => toggleDay(slot, day)}>{day.slice(0, 3)}</button>)}
                     </div>
@@ -198,7 +206,6 @@ export function ClubFinder() {
                       <div className="field"><label htmlFor={`end-${slot.id}`}>To</label><input type="time" id={`end-${slot.id}`} className="text-input" value={slot.end} aria-invalid={Boolean(error)} aria-describedby={error ? `slot-error-${slot.id}` : undefined} onChange={(event) => updateSlot(slot.id, { end: event.target.value })} /></div>
                     </div>
                     {error && <p className="catalog-error" id={`slot-error-${slot.id}`} role="status">{error}</p>}
-                    {(slots.length > 1 || slot.days.length > 0 || slot.start || slot.end) && <button type="button" className="catalog-text-button" onClick={() => removeSlot(slot.id)}>Remove time slot {index + 1}</button>}
                   </fieldset>;
                 })}
                 <button type="button" className="secondary-button catalog-add-slot" onClick={addSlot}>+ Add another time slot</button>
